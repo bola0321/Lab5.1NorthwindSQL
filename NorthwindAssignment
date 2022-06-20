@@ -1,0 +1,24 @@
+1. select * from customers;
+2. select distinct country from customers;
+3. select * from customers where CustomerID like 'BL%';
+4. select * from orders limit 100;
+5. select * from customers where PostalCode in (1010, 3012, 12209, 05023);
+6. select * from orders where ShipRegion is not null;
+7. select * from customers order by Country, City;
+8. insert into customers (CustomerID,CompanyName,ContactName,ContactTitle,Address,City,Region,PostalCode,Country,Phone,Fax) values('BLWED','bees sweets', 'beep boop','ceo', 'Big Street 1234','detroit','michigan',48201,'united states','(313)313-3133','111-1111');
+9. update orders set ShipRegion ='EuroZone' where ShipRegion = 'France';
+10. delete from `order details` where Quantity = 1;
+11. select avg (quantity),max(quantity),min(quantity) from `order details`;
+12. select avg (quantity),max(quantity),min(quantity) from `order details` group by OrderID;
+14. select CustomerID from orders where OrderID = '10290'; 
+
+14. select * from orders inner join customers;
+	select * from orders left join customers on orders.ShipCity = customers.City ;
+	select * from orders right join customers on orders.ShipCity = customers.City ;
+
+15. select ShipCity,ShipCountry from orders inner join employees on orders.EmployeeID = employees.EmployeeID where employees.City = 'London';
+16. select ShipName from orders inner join `order details` on orders.OrderID =  `order details`.OrderID inner join products on `order details`.ProductID = products.ProductID where products.Discontinued = 1;
+17. select firstname from employees where ReportsTo is null;
+
+18. select firstname, EmployeeID from employees;
+	select firstname from employees where ReportsTo = '2';
